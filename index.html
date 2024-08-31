@@ -1,67 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>String Transformer</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-</head>
+  </head>
 
-
-<body>
-    
+  <body>
     <div class="container">
+      <input
+        id="input"
+        value="this is a normal sentence to transform"
+        type="text"
+        placeholder="type here"
+      />
 
-        <input id="input" value="this is a normal sentence to transform" type="text" placeholder="type here">
+      <div class="lower-case output">
+        <label> Lower Case </label>
+        <span> </span>
+      </div>
 
-        <div class="lower-case  output">
-            <label> Lower Case </label>
-            <span> </span>
+      <div class="upper-case output">
+        <label> Upper Case </label>
+        <span> </span>
+      </div>
 
-        </div>
+      <div class="camel-case output">
+        <label> Camel Case </label>
+        <span> </span>
+      </div>
 
-        <div class="upper-case  output">
-            <label> Upper Case </label>
-            <span>  </span>
+      <div class="pascal-case output">
+        <label> Pascal Case </label>
+        <span> </span>
+      </div>
 
-        </div>
+      <div class="snake-case output">
+        <label> Snake Case </label>
+        <span> </span>
+      </div>
 
-        <div class="camel-case  output">
-            <label> Camel Case </label>
-            <span> </span>
+      <div class="kebab-case output">
+        <label> Kebab Case </label>
+        <span> </span>
+      </div>
 
-        </div>
-
-
-        <div class="pascal-case  output">
-            <label> Pascal Case </label>
-            <span> </span>
-
-        </div>
-
-        <div class="snake-case  output">
-            <label> Snake Case </label>
-            <span> </span>
-
-        </div>
-
-        <div class="kebab-case  output">
-            <label> Kebab Case </label>
-            <span> </span>
-
-        </div>
-
-        <div class="trim-case  output">
-            <label> Trim Case </label>
-            <span> </span>
-
-        </div>
-
+      <div class="trim-case output">
+        <label> Trim Case </label>
+        <span> </span>
+      </div>
     </div>
-
-
-</body>
-
-
+  </body>
 </html>

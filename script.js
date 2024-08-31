@@ -1,118 +1,90 @@
-let userInput= document.querySelector("input");
+let userInput = document.querySelector('input');
 
-let userText= userInput.value
+let userText = userInput.value;
 
 userInput.addEventListener('input', (e) => {
-    
-    userText= e.target.value
-  
-    transformLower( )
-    transformUpper( )
-    transformCamel( )
-    transformPascal( )
-    transformSnake( )
-    transformKebab( )
-    transformTrim( )
-})
+  userText = e.target.value;
 
+  transformLower();
+  transformUpper();
+  transformCamel();
+  transformPascal();
+  transformSnake();
+  transformKebab();
+  transformTrim();
+});
 
-transformLower( )
+transformLower();
 
-function transformLower( ) {
+function transformLower() {
+  let lowerSpan = document.querySelector('.lower-case span');
 
-    let lowerSpan= document.querySelector('.lower-case span')
-
-    lowerSpan.innerText= userText.toLowerCase()
+  lowerSpan.innerText = userText.toLowerCase();
 }
 
-transformUpper( )
+transformUpper();
 
-function transformUpper( ) {
+function transformUpper() {
+  let lowerSpan = document.querySelector('.upper-case span');
 
-    let lowerSpan= document.querySelector('.upper-case span')
-
-    lowerSpan.innerText= userText.toUpperCase()
+  lowerSpan.innerText = userText.toUpperCase();
 }
 
+transformCamel();
 
+function transformCamel() {
+  let lowerSpan = document.querySelector('.camel-case span');
 
-transformCamel( )
+  let strArr = userText.split(/[\s,;]+/);
 
-function transformCamel( ) {
+  let newArr = strArr.map((word, i) => {
+    if (i === 0) {
+      return word;
+    } else {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }
+  });
 
-    let lowerSpan= document.querySelector('.camel-case span')
-
-    let strArr= userText.split(/[\s,;]+/)
- 
-
-   let newArr= strArr.map((word, i)  => {
-            if(i===0) { 
-                return word 
-            }
-       else {
-        
-           return word.charAt(0).toUpperCase() + word.slice(1) 
-       }
-            
-   })
-   
-   let opString= newArr.join('')
-   lowerSpan.innerText= opString
+  let opString = newArr.join('');
+  lowerSpan.innerText = opString;
 }
 
+transformPascal();
 
+function transformPascal() {
+  let lowerSpan = document.querySelector('.pascal-case span');
 
+  let strArr = userText.split(/[\s,;]+/);
+  // console.log(strArr);
 
-transformPascal( )
+  let newArr = strArr.map((word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  });
 
-function transformPascal( ) {
-
-    let lowerSpan= document.querySelector('.pascal-case span')
-
-    let strArr= userText.split(/[\s,;]+/)
-    // console.log(strArr);
-
-   let newArr= strArr.map((word)  => {
-
-        
-           return word.charAt(0).toUpperCase() + word.slice(1)
-            
-   })
-   
-   let opString= newArr.join('')
-   lowerSpan.innerText= opString
+  let opString = newArr.join('');
+  lowerSpan.innerText = opString;
 }
 
+transformSnake();
 
+function transformSnake() {
+  let lowerSpan = document.querySelector('.snake-case span');
 
-
-
-
-
-transformSnake( )
-
-function transformSnake( ) {
-
-    let lowerSpan= document.querySelector('.snake-case span')
-
-    lowerSpan.innerText= userText.toLowerCase().replaceAll(' ', '_')
+  lowerSpan.innerText = userText.toLowerCase().replaceAll(' ', '_');
 }
 
-transformKebab( )
+transformKebab();
 
-function transformKebab( ) {
+function transformKebab() {
+  let lowerSpan = document.querySelector('.kebab-case span');
 
-    let lowerSpan= document.querySelector('.kebab-case span')
-
-    lowerSpan.innerText= userText.toLowerCase().replaceAll(' ', '-')
+  lowerSpan.innerText = userText.toLowerCase().replaceAll(' ', '-');
 }
 
+transformTrim();
 
-transformTrim( )
+function transformTrim() {
+  let lowerSpan = document.querySelector('.trim-case span');
 
-function transformTrim( ) {
-
-    let lowerSpan= document.querySelector('.trim-case span')
-
-    lowerSpan.innerText= userText.toLowerCase().replaceAll(' ', '')
+  lowerSpan.innerText = userText.replaceAll(' ', '');
 }
